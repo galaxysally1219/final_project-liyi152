@@ -18,34 +18,3 @@ step 4: 利用面積關係求出原點位置
 1.原點在內部: abo+aco+bco=abc
 2.原點在外部: ab0+aco+bco>abc
 3.原點在邊界上: abo,aco, or bco 其中一個面積為0
-
-pseudo code:
-ab=B-A;
-ac=C-A;
-
-abc=1/2*abs(ab(1)*ac(2)-ab(2)*ac(1)); 
-abo=1/2*abs(A(1)*B(2)-A(2)*B(1)); 
-aco=1/2*abs(A(1)*C(2)-A(2)*C(1)); 
-bco=1/2*abs(B(1)*C(2)-B(2)*C(1)); 
-
-check=0; 
-if(A==B|A==C|B==C)
-    disp('共點');
-    check=1;
-end
-if(abs(ab/norm(ab))==abs(ac/norm(ac)))
-    disp('共線');
-    check=1;
-end
-if(check==0)
-    if(abo+aco+bco>abc)
-        disp('在外部');
-    else
-        if(abo>0&&aco>0&&bco>0)
-            disp('在內部');
-        else
-            disp('在邊界上');
-        end
-    end
-end
-end
