@@ -17,7 +17,6 @@ check=0;
 %判斷三點是否呈三角形
 if(A==B|A==C|B==C)
     disp('共點');
-    check=1;
 end
 if(abs(ab/norm(ab))==abs(ac/norm(ac)))
     disp('共線');
